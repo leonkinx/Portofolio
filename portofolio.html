@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Leo Anindya</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+        
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .menu a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .menu a:hover {
+            background-color: #f0f8ff;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .profile-section {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .photo-container {
+            margin-bottom: 30px;
+        }
+        
+        .photo-frame {
+            display: inline-block;
+            padding: 15px;
+            background: white;
+            border: 12px solid #3498db;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .photo-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .profile-img {
+            width: 280px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .about-section {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+        }
+        
+        .about-text {
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill {
+            background-color: #ecf0f1;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .portfolio {
+            margin-top: 50px;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .project {
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .project-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 4px;
+            transition: transform 0.5s ease;
+        }
+        
+        .project:hover .project-img {
+            transform: scale(1.03);
+        }
+        
+        .project-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 12px;
+            color: #2c3e50;
+            font-size: 1.3rem;
+        }
+        
+        .project-info p {
+            color: #555;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            line-height: 1.7;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .tag {
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .contact {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+        }
+        
+        .icon {
+            color: #3498db;
+            width: 24px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 900px) {
+            .projects {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .project-img-container {
+                height: 230px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .photo-frame {
+                padding: 10px;
+            }
+            
+            .profile-img {
+                width: 250px;
+                height: 300px;
+            }
+            
+            .project-img-container {
+                height: 220px;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-img {
+                width: 220px;
+                height: 280px;
+            }
+            
+            .project-img-container {
+                height: 200px;
+                padding: 10px;
+            }
+            
+            .project-info {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Leo Anindya Putra Nugraha</h1>
+            <div class="subtitle">MAHASISWA TEKNIK INFORMATIKA</div>
+            <div class="menu">
+                <a href="#about">Tentang</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Kontak</a>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="profile-section">
+                <div class="photo-container">
+                    <div class="photo-frame">
+                        <img src="leo.jpeg" alt="Foto Profil" class="profile-img" id="profileImage" onerror="handleImageError()">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-section" id="about">
+                <h2>Tentang Saya</h2>
+                <div class="about-text">
+                    <p>Saya adalah mahasiswa semester 5 yang memiliki ketertarikan di bidang pengembangan web. Saya telah mempelajari HTML, CSS, JavaScript, PHP, UI Design, dan Responsive Web untuk membangun website yang menarik, interaktif, dan dapat diakses dengan baik di berbagai perangkat. Saya terus berusaha mengembangkan kemampuan dan mengikuti perkembangan teknologi web.</p>
+                </div>
+                
+                <h2>Keahlian</h2>
+                <div class="skills">
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">PHP</div>
+                    <div class="skill">UI Design</div>
+                    <div class="skill">Responsive Web</div>
+                    <div class="skill">MySQL</div>
+                    <div class="skill">Bootstrap</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="portfolio" id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="projects">
+                <div class="project">
+                    <div class="project-img-container">
+                        <img src="fishshop.png" alt="Toko Online Ikan" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>FishShop - Toko Online Ikan</h3>
+                        <p>Aplikasi e-commerce untuk toko ikan online dengan sistem keranjang belanja, checkout, dan pembayaran. Website ini dirancang responsif dan user-friendly untuk pengalaman belanja yang optimal.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-img-container">
+                        <img src="dashboard.png" alt="Dashboard Admin" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>Admin Dashboard</h3>
+                        <p>Panel admin untuk mengelola manajemen menu, melihat pesanan masuk, monitoring stok produk, dan laporan keuangan. Dilengkapi dengan chart visual untuk analisis data.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact" id="contact">
+            <h2>Kontak</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">✉️</div>
+                    <div>leonkinxx@gmail.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📱</div>
+                    <div>085747844658</div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <div>Tangerang, Indonesia</div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Leo Anindya Putra Nugraha. All rights reserved.</p>
+            <p style="margin-top: 5px;">Dibuat dengan HTML, CSS, dan JavaScript.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Fungsi untuk menangani error gambar
+        function handleImageError() {
+            const img = document.getElementById('profileImage');
+            
+            // Ganti dengan gambar fallback dari Unsplash
+            img.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
+            img.alt = 'Foto Profil (Fallback)';
+            
+            // Tampilkan pesan
+            console.log('Gambar "leo.jpeg" tidak ditemukan. Menggunakan gambar fallback.');
+        }
+        
+        // Cek jika gambar gagal dimuat saat halaman dimuat
+        window.addEventListener('load', function() {
+            const img = document.getElementById('profileImage');
+            
+            // Cek jika gambar gagal dimuat
+            if (img && (img.naturalWidth === 0 || img.complete === false)) {
+                handleImageError();
+            }
+            
+            // Smooth scrolling untuk menu navigasi
+            document.querySelectorAll('.menu a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Efek sederhana saat halaman dimuat
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s';
+            
+            setTimeout(function() {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
